@@ -4,20 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TEC&FEM — عالمك الوردي الآمن</title>
+  <link rel="icon" href="icon.jpg" type="image/jpeg">
   <style>
     :root{
-      --pink:#d63384;          /* وردي غامق أساسي */
-      --pink-2:#f8d7e3;        /* خلفيات فاتحة */
-      --ink:#1f2328;           /* نص داكن */
-      --muted:#6b7280;         /* نص ثانوي */
-      --card:#ffffff;          /* بطاقات */
+      --pink:#d63384;
+      --pink-2:#f8d7e3;
+      --ink:#1f2328;
+      --muted:#6b7280;
+      --card:#ffffff;
       --shadow:0 10px 24px rgba(0,0,0,.08);
       --radius:18px;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:"Tajawal", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;color:var(--ink);background:#fff}
 
-    /* شريط علوي */
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid #f1f5f9;z-index:20}
     .nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
     .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
@@ -25,7 +25,6 @@
     .nav a{color:var(--ink);text-decoration:none;font-weight:600;margin-inline:8px}
     .nav a:hover{color:var(--pink)}
 
-    /* البانر */
     .hero{background:linear-gradient(180deg,#fff, var(--pink-2));}
     .hero-wrap{max-width:1100px;margin:auto;padding:56px 20px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
     .kicker{color:var(--pink);font-weight:800;letter-spacing:.4px}
@@ -38,7 +37,6 @@
     .btn.ghost{background:#fff;border:2px solid var(--pink);color:var(--pink)}
     .btn.ghost:hover{background:var(--pink);color:#fff}
 
-    /* بطاقات الأقسام */
     section{padding:56px 20px}
     .wrap{max-width:1100px;margin:auto}
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -47,18 +45,15 @@
     .card p{color:var(--muted)}
     .tag{display:inline-block;background:var(--pink-2);color:var(--pink);font-weight:700;padding:6px 12px;border-radius:999px;font-size:12px}
 
-    /* قسم رودي */
     .rudy{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
     .rudy .bubble{background:#fff;border:1px solid #f1f5f9;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
     .rudy h2{margin:0 0 10px;color:var(--pink)}
 
-    /* فوتر */
     footer{background:#0f172a;color:#e2e8f0}
     .foot{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:20px;padding:36px 20px}
     footer a{color:#e2e8f0;text-decoration:none}
     .copy{border-top:1px solid #1f2937;padding:12px 20px;text-align:center;color:#94a3b8}
 
-    /* تجاوب */
     @media (max-width: 960px){
       .hero-wrap{grid-template-columns:1fr}
       .grid{grid-template-columns:1fr 1fr}
@@ -70,13 +65,11 @@
       h1{font-size:28px}
     }
   </style>
-  <!-- خطوط Google اختيارية: يمكن حذفها إن لم تتوفر إنترنت -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- شريط علوي -->
   <header>
     <nav class="nav">
       <div class="brand"><span class="dot"></span> TEC&FEM</div>
@@ -89,7 +82,6 @@
     </nav>
   </header>
 
-  <!-- بانر ترحيبي -->
   <section class="hero">
     <div class="hero-wrap">
       <div>
@@ -109,7 +101,6 @@
     </div>
   </section>
 
-  <!-- الكورسات -->
   <section id="courses">
     <div class="wrap">
       <h2 style="color:var(--pink);margin:0 0 16px">الكورسات</h2>
@@ -133,7 +124,6 @@
     </div>
   </section>
 
-  <!-- قسم رودي -->
   <section id="rudy">
     <div class="wrap rudy">
       <div class="bubble">
@@ -154,7 +144,6 @@
     </div>
   </section>
 
-  <!-- أدوات للمذاكرة والمشاريع -->
   <section id="tools" style="background:var(--pink-2)">
     <div class="wrap">
       <h2 style="color:var(--pink);margin:0 0 16px">أدوات تساعدك في الدراسة والمشاريع</h2>
@@ -166,7 +155,6 @@
     </div>
   </section>
 
-  <!-- عن المنصة -->
   <section id="about">
     <div class="wrap">
       <div class="card">
@@ -176,7 +164,6 @@
     </div>
   </section>
 
-  <!-- فوتر -->
   <footer>
     <div class="foot">
       <div>
@@ -191,22 +178,14 @@
       </div>
       <div>
         <h4 style="margin:0 0 8px">تواصل</h4>
-        <a <a href="https://facebook.com/profile.php?id=61576928237138" target="_blank" style="text-decoration: none;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png" 
-                   alt="Facebook" 
-                   style="width:40px; height:40px; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-          </a>
-   
-
-          <!-- أيقونة إنستجرام -->
-          <a href="https://instagram.com/tec_and_fem?utm_source=qr&igsh=Yno3OHU2dTM0bTAx" target="_blank" style="text-decoration: none; margin-left: 10px;">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
-                   alt="Instagram" 
-                   style="width:40px; height:40px; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-          </a>
-
+        <a href="https://facebook.com/profile.php?id=61576928237138" target="_blank">
+          facebook.com/profile.php?id=61576928237138
+        </a><br/>
+        <span>مصر – قنا</span>
+      </div>
     </div>
-    <div class="copy">© TEC&FEM 2025. جميع الحقوق محفوظة.</div>
+    <div class="copy" style="text-align:center;">© TEC&FEM 2025. جميع الحقوق محفوظة.</div>
   </footer>
 </body>
 </html>
+
