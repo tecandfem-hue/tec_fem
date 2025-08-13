@@ -1,214 +1,201 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>منصة Tec&Fem التعليمية</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEC&FEM — عالمك الوردي الآمن</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Cairo', sans-serif;
-      background-color: #fff0f5;
-      color: #333;
+    :root{
+      --pink:#d63384;          /* وردي غامق أساسي */
+      --pink-2:#f8d7e3;        /* خلفيات فاتحة */
+      --ink:#1f2328;           /* نص داكن */
+      --muted:#6b7280;         /* نص ثانوي */
+      --card:#ffffff;          /* بطاقات */
+      --shadow:0 10px 24px rgba(0,0,0,.08);
+      --radius:18px;
     }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:"Tajawal", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;color:var(--ink);background:#fff}
 
-    header {
-      background-color: #e91e63;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    /* شريط علوي */
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #f1f5f9;z-index:20}
+    .nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
+    .brand .dot{width:12px;height:12px;background:var(--pink);border-radius:50%}
+    .nav a{color:var(--ink);text-decoration:none;font-weight:600;margin-inline:8px}
+    .nav a:hover{color:var(--pink)}
+
+    /* البانر */
+    .hero{background:linear-gradient(180deg,#fff, var(--pink-2));}
+    .hero-wrap{max-width:1100px;margin:auto;padding:56px 20px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+    .kicker{color:var(--pink);font-weight:800;letter-spacing:.4px}
+    h1{margin:10px 0 14px;font-size:40px;line-height:1.2}
+    .lead{color:var(--muted);font-size:18px}
+    .cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+    .btn{appearance:none;border:none;border-radius:999px;padding:12px 22px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.2s}
+    .btn.primary{background:var(--pink);color:#fff;box-shadow:var(--shadow)}
+    .btn.primary:hover{transform:translateY(-2px);filter:saturate(110%)}
+    .btn.ghost{background:#fff;border:2px solid var(--pink);color:var(--pink)}
+    .btn.ghost:hover{background:var(--pink);color:#fff}
+
+    /* بطاقات الأقسام */
+    section{padding:56px 20px}
+    .wrap{max-width:1100px;margin:auto}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid #f1f5f9;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .card h3{margin:6px 0 8px}
+    .card p{color:var(--muted)}
+    .tag{display:inline-block;background:var(--pink-2);color:var(--pink);font-weight:700;padding:6px 12px;border-radius:999px;font-size:12px}
+
+    /* قسم رودي */
+    .rudy{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+    .rudy .bubble{background:#fff;border:1px solid #f1f5f9;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .rudy h2{margin:0 0 10px;color:var(--pink)}
+
+    /* فوتر */
+    footer{background:#0f172a;color:#e2e8f0}
+    .foot{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:20px;padding:36px 20px}
+    footer a{color:#e2e8f0;text-decoration:none}
+    .copy{border-top:1px solid #1f2937;padding:12px 20px;text-align:center;color:#94a3b8}
+
+    /* تجاوب */
+    @media (max-width: 960px){
+      .hero-wrap{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .rudy{grid-template-columns:1fr}
+      h1{font-size:34px}
     }
-
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #e91e63;
-    }
-
-    .course-box {
-      background-color: #fce4ec;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    footer {
-      background-color: #f06292;
-      color: white;
-      text-align: center;
-      padding: 15px;
-    }
-
-    .contact-item {
-      margin: 10px 0;
+    @media (max-width: 640px){
+      .grid{grid-template-columns:1fr}
+      h1{font-size:28px}
     }
   </style>
+  <!-- خطوط Google اختيارية: يمكن حذفها إن لم تتوفر إنترنت -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
+  <!-- شريط علوي -->
   <header>
-    <h1>منصة Tec&Fem التعليمية</h1>
-    <nav>
-      <a href="#home">الرئيسية</a>
-      <a href="#courses">الدورات</a>
-      <a href="#about">من نحن</a>
-      <a href="#contact">اتصل بنا</a>
-       <!-- من هي روزي-->
-      <a href="rozy.html" style="
-        background-color: #d63384;
-        color: white;
-        text-decoration: none;
-        padding: 12px 30px;
-        font-size: 18px;
-        border-radius: 30px;
-        display: block;
-        text-align: center;
-        width: fit-content;
-        margin: 30px auto;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        transition: all 0.3s ease;
-      ">
-        🌸 من هي روزي؟
-      </a>
-
-
-
+    <nav class="nav">
+      <div class="brand"><span class="dot"></span> TEC&FEM</div>
+      <div>
+        <a href="#courses">الكورسات</a>
+        <a href="#rudy">رودي</a>
+        <a href="#tools">أدوات المذاكرة</a>
+        <a href="#about">عن المنصة</a>
+      </div>
     </nav>
   </header>
 
-  <!-- الرئيسية -->
-  <section id="home">
-    <h2>تعريف المنصة</h2>
-    <p>  هي منصة تعليمية مخصصة للبنات ، تهدف إلى تمكين الفتيات من خلال تعلم المهارات الرقمية مثل البرمجة، التصميم، التسويق الإلكتروني، وغير ذلك.</p>
-    <div style="background-color: #fff4e6; border-left: 6px solid #ffa94d; padding: 15px; margin: 20px 0; border-radius: 8px;">
-      <h4 style="color: #d9480f; margin-top: 0;">⚠️ ملاحظة هامة</h4>
-
-      <p style="margin: 0; color: #5f3dc4; font-size: 16px;">
-        حالياً، الدورات غير متاحة بشكل مباشر على الموقع.<br>
-        الموقع يقدّم فكرة المنصة ويعرض نبذة عن الكورسات المتاحة فقط.<br><br>
-        للتسجيل في أي دورة، يرجى <strong>التواصل مع تيم تكفيم</strong> عبر صفحتنا على فيسبوك، وسيتم التواصل معك لتأكيد التسجيل وتفاصيل الدورة.
-      </p>
-      <div style="margin-top: 15px;">
-        <a href="https://www.facebook.com/61576928237138" target="_blank" style="background-color: #4267B2; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block;">
-          تواصلي معنا عبر فيسبوك
-        </a>
+  <!-- بانر ترحيبي -->
+  <section class="hero">
+    <div class="hero-wrap">
+      <div>
+        <div class="kicker">عالمكِ الوردي الآمن</div>
+        <h1>منصة TEC&FEM لتمكين الفتيات تقنيًا بثقة</h1>
+        <p class="lead">تعلمّي البرمجة، الأمن السيبراني، والذكاء الاصطناعي في بيئة آمنة، مع محتوى عملي بسيط وداعم لدراستك ومشروعاتك.</p>
+        <div class="cta">
+          <a class="btn primary" href="#courses">ابدئي التعلّم الآن</a>
+          <a class="btn ghost" href="rozy.html">🌸 من هي رودي؟</a>
+        </div>
       </div>
-    </div>
-
-
-    <h3>طريقة الاستخدام:</h3>
-    <ul>
-      <li>اختاري الدورة المناسبة من قسم "الدورات".</li>
-      <li>ابدئي بالتعلم من خلال المحتوى الموجود.</li>
-      <li>تواصلي معنا إذا واجهتك أي مشكلة.</li>
-    </ul>
-  </section>
-
-  <!-- الدورات -->
-  <section id="courses" style="padding: 2rem; font-family: Arial, sans-serif;">
-    <h2 style="text-align: center;">الدورات</h2>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem;">
-
-      <!-- أمن سيبراني -->
-      <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1rem; background-color: #f9f9f9;">
-        <h3>أمن سيبراني</h3>
-        <p>مقدمة في الأمن السيبراني وأساليب الحماية الرقمية، تشمل التوعية بالتهديدات الحديثة وأساليب الدفاع.</p>
+      <div class="card">
+        <span class="tag">جديد</span>
+        <h3 style="margin:10px 0 6px">كورس الذكاء الاصطناعي (AI)</h3>
+        <p>أساسيات الذكاء الاصطناعي وتطبيقاته في الحياة اليومية والدراسة، وكيف يساعدك على إنجاز المشاريع بسرعة وذكاء — بدون تعقيد.</p>
       </div>
-
-
-
-
-
-      <!-- البرمجة -->
-      <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1rem; background-color: #f9f9f9;">
-        <h3>البرمجة</h3>
-        <p>تعلم أساسيات البرمجة من الصفر باستخدام لغات مثل HTML, CSS, Python، مع مشاريع عملية للفتيات المبتدئات.</p>
-      </div>
-
-  
-      <!-- AI -->
-      
-      <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1rem; background-color: #f9f9f9;">
-        <h3> الذكاء الاصطناعي AI</h3>
-        كورس مخصص للتعرف على أساسيات الذكاء الاصطناعي وكيفية عمله،
-        وفهم تطبيقاته في الحياة اليومية والدراسية،
-        وكيف يمكنه المساعدة في الانتهاء من المشاريع وتسهيل المهام
-        بطرق ذكية وعملية.</p>
-      </div>
-
-      
-      <!-- التسويق -->
-      <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1rem; background-color: #f9f9f9;">
-        <h3>التسويق</h3>
-        <p>مفاهيم التسويق الإلكتروني، استراتيجيات بناء العلامة التجارية، إدارة الحملات على السوشيال ميديا، والتعامل مع الجمهور.</p>
-      </div>
-
-      <!-- تطوير الذات -->
-      <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1rem; background-color: #f9f9f9;">
-        <h3>تطوير الذات</h3>
-        <p>مهارات تعزيز الثقة، إدارة الوقت، تحديد الأهداف، وبناء عادات إيجابية لتطوير الشخصية.</p>
-      </div>
-
-      <!-- TOT -->
-      <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1rem; background-color: #f9f9f9;">
-        <h3>TOT (تدريب المدربات)</h3>
-        <p>إعداد المدربات وتأهيلهن لتقديم دورات فعالة، يشمل مهارات العرض، تصميم المحتوى، والتفاعل مع المتعلمات.</p>
-      </div>
-
-      <!-- HR -->
-      <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1rem; background-color: #f9f9f9;">
-        <h3>HR (الموارد البشرية)</h3>
-        <p>مفاهيم إدارة الموارد البشرية، التوظيف، تقييم الأداء، والتواصل الفعّال في بيئة العمل.</p>
-      </div>
-
-      <!-- ريادة أعمال -->
-      <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1rem; background-color: #f9f9f9;">
-        <h3>ريادة أعمال</h3>
-        <p>مبادئ تأسيس المشاريع، التفكير الريادي، تحليل السوق، بناء خطة العمل، والتسويق الإلكتروني.</p>
-      </div>
-
     </div>
   </section>
 
+  <!-- الكورسات -->
+  <section id="courses">
+    <div class="wrap">
+      <h2 style="color:var(--pink);margin:0 0 16px">الكورسات</h2>
+      <div class="grid">
+        <div class="card course-card">
+          <span class="tag">برمجة</span>
+          <h3>مقدمة في البرمجة</h3>
+          <p>أساسيات التفكير المنطقي وبناء الصفحات بـ HTML/CSS وجافاسكربت بمشاريع صغيرة خطوة بخطوة.</p>
+        </div>
+        <div class="card course-card">
+          <span class="tag">أمن سيبراني</span>
+          <h3>الأمن السيبراني للفتيات</h3>
+          <p>أفضل ممارسات الأمان، كلمات مرور قوية، كشف الاحتيال، والخصوصية على الشبكات الاجتماعية.</p>
+        </div>
+        <div class="card course-card">
+          <span class="tag">ذكاء اصطناعي</span>
+          <h3>الذكاء الاصطناعي (AI)</h3>
+          <p>تطبيقات عملية تسهّل حياتك اليومية والدراسية وتسرّع إنجاز المشاريع باستخدام أدوات AI آمنة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- قسم رودي -->
+  <section id="rudy">
+    <div class="wrap rudy">
+      <div class="bubble">
+        <h2>🌸 من هي رودي؟</h2>
+        <p>رودي شخصية افتراضية قريبة من كل بنت؛ تقع في مواقف حقيقية مع الهاتف والسوشيال ميديا وتعلّمك كيف تتصرفي بذكاء وأمان.</p>
+        <div class="cta" style="margin-top:10px">
+          <a class="btn primary" href="rozy.html">اقرئي قصتها</a>
+        </div>
+      </div>
+      <div class="bubble">
+        <h2>دورها على المنصة</h2>
+        <ul style="margin:0 0 0 0;color:var(--muted)">
+          <li>قصص قصيرة تشرح مواقف يومية واقعية.</li>
+          <li>نصائح أمان رقمية مبسطة.</li>
+          <li>تشجيع على التفكير النقدي قبل الضغط على أي رابط.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
+  <!-- أدوات للمذاكرة والمشاريع -->
+  <section id="tools" style="background:var(--pink-2)">
+    <div class="wrap">
+      <h2 style="color:var(--pink);margin:0 0 16px">أدوات تساعدك في الدراسة والمشاريع</h2>
+      <div class="grid">
+        <div class="card"><h3>مُخطِّط المهام</h3><p>قسّمي مشروعك لمهام صغيرة وحددي مواعيد التسليم بسهولة.</p></div>
+        <div class="card"><h3>قوالب عروض</h3><p>نماذج عروض تقديمية جاهزة للاستخدام لعرض مشروعك بثقة.</p></div>
+        <div class="card"><h3>مساعد كتابة</h3><p>صياغة وتهذيب تقارير الدراسة مع الحفاظ على أسلوبك.</p></div>
+      </div>
+    </div>
+  </section>
 
-  <!-- من نحن -->
+  <!-- عن المنصة -->
   <section id="about">
-    <h2>من نحن</h2>
-    <p>نحن تيم بنات شغوفات بالتكنولوجيا والتعليم، هدفنا هو خلق بيئة آمنة ومحفّزة لكل بنت حابة تطور من نفسها في المجال الرقمي.</p>
+    <div class="wrap">
+      <div class="card">
+        <h3 style="color:var(--pink);margin-top:0">عن TEC&FEM</h3>
+        <p>منصة عربية تُوفّر بيئة آمنة وتمكّن الفتيات من تعلم التكنولوجيا بطرق عملية بسيطة. رؤيتنا: عالم رقمي وردي آمن، بنات أقوى، ومستقبل أذكى.</p>
+      </div>
+    </div>
   </section>
 
-
-  <!-- اتصل بنا -->
-  <div style="margin-top: 20px;">
-    <h3>تابعينا على فيسبوك</h3>
-    <a href="https://www.facebook.com/61576928237138" target="_blank" style="text-decoration: none; color: #4267B2; display: flex; align-items: center; gap: 10px;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook" width="24" height="24">
-      <span>صفحة Tec&Fem على فيسبوك</span>
-    </a>
-  </div>
-
-
+  <!-- فوتر -->
   <footer>
-    &copy; 2025 منصة Tec&Fem - جميع الحقوق محفوظة
+    <div class="foot">
+      <div>
+        <div class="brand" style="margin-bottom:8px"><span class="dot"></span> TEC&FEM</div>
+        <p style="margin:0;color:#cbd5e1">مكان آمن للتعلم والنمو — للفتيات فقط.</p>
+      </div>
+      <div>
+        <h4 style="margin:0 0 8px">روابط سريعة</h4>
+        <a href="#courses">الكورسات</a><br/>
+        <a href="#rudy">رودي</a><br/>
+        <a href="#tools">الأدوات</a>
+      </div>
+      <div>
+        <h4 style="margin:0 0 8px">تواصل</h4>
+        <a href="mailto:hello@tecfem.example">hello@tecfem.example</a><br/>
+        <span>دبي — الإمارات</span>
+      </div>
+    </div>
+    <div class="copy">© TEC&FEM 2025. جميع الحقوق محفوظة.</div>
   </footer>
-
 </body>
 </html>
